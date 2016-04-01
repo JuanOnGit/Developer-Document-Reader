@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+    .container {
+        width: 100%;
+    }
+    .body-content {
+        margin-left: 16em;
+        margin-top: 2.4em;
+        width: 85%;
+    }
+
+    header {
+        padding: 0.7em;
+        background-color: #09243c;
+        color: white;
+        font-size: large;
+    }
+    header a{
+        background-color: #09243c;
+        color: white;
+        text-decoration: none;
+    }
+
+    header a:hover {
+        text-decoration:none;
+    }
+</style>
+<div class="jumbotron">
+    Developer Documentation Reader
+</div>
+<div class="container">
+    <header>
+        <a href="@Url.Content(@"Home\Index")">Reader</a>
+    </header>
+    <nav class="dd-sn-wrapper">
+        <ul>
+            <li class="dd-sn-brand"><a href="#">View Code</a></li>
+            <li><a href="#">Select Document</a></li>
+            <li><a href="#">Load Document</a></li>
+            <li><a href="#">Documents</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="container body-content">
+    <div class="row">
+        <div class="col-md-8 col-xs-8">
+            <h1>Document Name Here@*@ViewBag["DocumentName"]*@</h1>
+            <p>This is where documentation can be read.</p>
+        </div>
+        <div class="col-md-4">
+            <p>This is your code.</p>
+        </div>
+
+    </div>
+</div>
