@@ -18,6 +18,7 @@ namespace Developer_Documentation_Reader
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+        
         }
     }
 }

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Developer_Documentation_Reader.Models.Document>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm())
+    {
+    <p>
+        File Path: @Html.DropDownList("filePath", "All")
+        Document name: @Html.TextBox("searchString") <br />
+        <input type="submit" value="Filter" />
+    </p>
+    }
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DocumentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FilePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DocLength)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocumentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FilePath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DocLength)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.DocumentID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.DocumentID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.DocumentID })
+                </td>
+            </tr>
+        }
+
+    </table>

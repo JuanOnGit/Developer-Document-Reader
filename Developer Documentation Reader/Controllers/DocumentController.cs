@@ -15,9 +15,12 @@ namespace Developer_Documentation_Reader.Controllers
             return View();
         }
 
-        public string Welcome()
+        public ActionResult Welcome(string document, int docLength = 1)
         {
-            return "This is the welcome page.";
+            ViewBag.Message = "Hello " + document;
+            ViewBag.DocLength = docLength;
+
+            return View();
         }
     }
 }
